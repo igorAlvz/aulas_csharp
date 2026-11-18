@@ -1,10 +1,12 @@
-﻿namespace Sobregarga
+﻿using System.Runtime.InteropServices.Marshalling;
+
+namespace Sobregarga
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string [] vetor = { "B200", "b120", "C500", "B9f0" };
+            string [] vetor = { "B200", "b10", "b500", "b9f0" };
 
             Console.WriteLine($"Na lista {string.Join(", ", vetor)} temos: {SalaValida(vetor)} salas válidas.");
             
@@ -22,7 +24,7 @@
             {
                 if (i == 0)
                 {
-                    if (!char.IsLetter(codigo[i]) && char.IsUpper(codigo[i])) return false;
+                    if (!char.IsLetter(codigo[i]) || !char.IsUpper(codigo[i])) return false;
                 }
 
                 else if (!char.IsDigit(codigo[i])) return false;
@@ -35,36 +37,21 @@
         static int SalaValida(string[] codigo)
         {
             int validos = 0;
-            bool valido = false;
+           
 
             for (int i = 0; i < codigo.Length; i++)
+            {
+                if (SalaValida(codigo[i]))
+                    {
+                    validos++;
+                }
+            }
 
+    
+            return validos;
+               
+                   
+            } 
+        } }
             
 
-            {
-                if (valido) validos++;
-
-                valido = false;
-                if (codigo[i].Length < 4)
-                {
-                    continue;
-                }
-
-                for (int j = 0; j < codigo[i].Length; j++) {
-                    valido = false;
-                    Console.WriteLine(codigo[i][j]);
-                    if (j == 0) {
-                        if (!char.IsLetter(codigo[i][j]) && char.IsUpper(codigo[i][j])) break; ;
-                    }
-                    else if (!char.IsDigit(codigo[i][j])) break;
-                    
-                    valido = true;
-                   
-            }
-            }
-
-            return validos;
-
-        }
-    }
-}
