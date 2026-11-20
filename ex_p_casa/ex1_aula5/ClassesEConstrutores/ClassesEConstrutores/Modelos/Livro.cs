@@ -8,6 +8,7 @@
         public int Ano {get;}
 
         public DateTime DataCadastro {get;}
+        public bool Disponivel {get; private set; }// muda mas so por dentro
 
         private int avaliacao; // campo privado: só a própria classe enxerga
         public int Avalicao // propriedade pública: a porta controlada
@@ -28,10 +29,16 @@
         {
             this.Titulo = titulo;
             this.Autor = autor;
-            this.Ano = ano;
+            this.Ano = ano; 
+            Disponivel = true;
+            DataCadastro = DateTime.Now;
+
 
         }
-        
+
+        public void Emprestar() { Disponivel = false; }
+        public void Devolver() { Disponivel = true; }
+
 
     }
 }
