@@ -2,12 +2,11 @@
 
 using ClassesEConstrutores.Modelos;
 
-Leitor l1 = new Leitor("Igor", "igor@infnet.com");
-Leitor l2 = new Leitor("Julio");
-Leitor l3 = new Leitor("Marcos", "marcos@outlook.com");
-Leitor l4 = new Leitor("Pedro");
+//Leitor l1 = new Leitor("Igor");
 
-Console.WriteLine(l1);
-Console.WriteLine(l2);
-Console.WriteLine(l3);
-Console.WriteLine(l4);
+
+Livro livro1 = new Livro("Dom Casmurro", "Machado de Assis", 1932);
+livro1.Avalicao = 3;
+livro1.Avalicao = 9;
+
+Console.WriteLine(livro1.Avalicao);
