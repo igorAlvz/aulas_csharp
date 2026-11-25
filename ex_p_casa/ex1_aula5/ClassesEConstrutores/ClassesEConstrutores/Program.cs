@@ -2,11 +2,18 @@
 
 using ClassesEConstrutores.Modelos;
 
-//Leitor l1 = new Leitor("Igor");
 
+Leitor l1 = new Leitor("Igor", "alvesigorthiago@gmail.com",3);
+Leitor l2 = new Leitor("Lucas", "Lucas@gmail.com",2);
+Leitor l3 = new Leitor("Pedro", "marcos.outlook.com",1);
+Leitor l4 = new Leitor("Andressa", "andressa@gmail.com",7);
 
-Livro livro1 = new Livro("Dom Casmurro", "Machado de Assis", 1932);
-livro1.Avalicao = 3;
-livro1.Avalicao = 9;
+Console.WriteLine(l1.ToString());
+Console.WriteLine(l2.ToString());
+Console.WriteLine(l3.ToString());
+Console.WriteLine(l4.ToString());
 
-Console.WriteLine(livro1.Avalicao);
+public record class Multa
+{
+
+} 

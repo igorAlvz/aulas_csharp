@@ -1,35 +1,44 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ClassesEConstrutores.Modelos
 {
     public class Leitor
     {
-        string Nome{get;}
-        //string Email{get;}
-        //DateTime DataCadastro {get;}
 
-        public static int TotalCadastrados; // static: um só valor, da classe inteira
-        public int LivrosEmprestados {get;set;}
-        //public Leitor(string nome, string email)
-        //{
-        // Nome = nome;
-         //Email = email;
-         //DataCadastro = DateTime.Now;
-       //}
+        public string Nome { get; }
+        public string Email { get; set; }
 
+        public DateTime DataCadastrado { get; }
 
-        public Leitor(string nome, int livrosEmprestados)
-            {
-                Nome = nome;
-                TotalCadastrados++;
-                LivrosEmprestados = livrosEmprestados;
-            }
+        private int livroEmprestado;
 
-       public static bool NomeValido(string nome)
+        public int LivrosEmprestados
         {
-            return nome.Trim().Length >= 2;
+            get { return livroEmprestado; }
+            set
+            {
+                if (value >= 0 && value <= 3)
+                {
+                    livroEmprestado = value;
+                }
+            }
         }
-    }
+
+        public Leitor(string nome, string email,int qtdLivros)
+        {
+            this.Nome = nome;
+            this.Email = email;
+            this.DataCadastrado = DateTime.Now;
+            this.LivrosEmprestados = qtdLivros;
+
+        }
+
+        public override string ToString()
+        {
+            return $"Nome: {Nome} | Email: {Email} | Data Cadastro {DataCadastrado:dd/MM/yyyy HH:mm:ss} | Livros emprestados: {LivrosEmprestados}";
+        }
 
     }
-
+}
