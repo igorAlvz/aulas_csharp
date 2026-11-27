@@ -20,8 +20,8 @@ double total = 0;
 foreach(ItemAcervo item in atrasados)
 {
     double multa = item.CalcularMulta(3);
-    Console.WriteLine($"{item.Titulo}: R${multa}");
+    Console.WriteLine($"{item.Titulo}: R$ {multa}");
     total += multa;
 }
 
-Console.WriteLine($"Total: R${total}");
+Console.WriteLine($"Total: R$ {total}");

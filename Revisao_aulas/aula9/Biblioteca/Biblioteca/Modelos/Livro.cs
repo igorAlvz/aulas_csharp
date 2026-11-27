@@ -22,5 +22,10 @@ namespace Biblioteca.Modelos
         {
             return diasAtraso * 3;
         }
+
+        public override int PrazoEmprestimoDias()
+        {
+            return 3;
+        }
     }
 }

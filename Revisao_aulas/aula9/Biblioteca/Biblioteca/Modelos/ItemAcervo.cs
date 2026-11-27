@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Biblioteca.Modelos
 {
-    public class ItemAcervo
+    public abstract class ItemAcervo
     {
         private int ano;
 
@@ -34,5 +34,7 @@ namespace Biblioteca.Modelos
         {
             return diasAtraso * 1.00;
         }
+
+        public abstract int PrazoEmprestimoDias();
     }
 }

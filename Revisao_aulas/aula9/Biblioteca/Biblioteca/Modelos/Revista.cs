@@ -12,5 +12,10 @@
         {
             return diasAtraso * 2.50;
         }
+
+        public override int PrazoEmprestimoDias()
+        {
+            return 4;
+        }
     }
 }
