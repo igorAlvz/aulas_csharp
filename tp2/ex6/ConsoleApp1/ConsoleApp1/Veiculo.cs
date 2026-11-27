@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Estacionamento
+﻿namespace ConsoleApp1
 {
     public class Veiculo
     {
         public string Placa;
-        public DateTime HoraEntrada;
         public string Tipo;
+        public DateTime HoraEntrada;
 
-        public Veiculo(string placa, DateTime horaEntrada, string tipo)
+        public Veiculo(string placa, string  tipo, DateTime horaEntrada)
         {
             this.Placa = placa;
-            this.HoraEntrada = horaEntrada;
             this.Tipo = tipo;
+            this.HoraEntrada = horaEntrada;
         }
 
         public Veiculo(string placa, string tipo)
@@ -23,5 +19,6 @@ namespace Estacionamento
             this.Tipo = tipo;
             this.HoraEntrada = DateTime.Now;
         }
+       
     }
 }
