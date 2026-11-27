@@ -30,6 +30,11 @@ namespace AulaClasses.Modelo
             }
         }
 
+        public bool Disponivel { get; private set; }
+
+        public void Emprestar() { Disponivel = false; }
+        public void Devolver() { Disponivel = true; }
+
         public Livro(string titulo, string autor, int ano)
         {
             this.Titulo =  titulo;
